@@ -1,10 +1,9 @@
-package com.example.marvelapp
+package com.marvelapp
 
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.onboarding.marvelapp.R
-import com.onboarding.marvelapp.databinding.ActivityMainBinding
+import com.marvelapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
