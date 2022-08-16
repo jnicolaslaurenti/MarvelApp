@@ -1,4 +1,4 @@
-package com.onboarding.marvelapp
+package com.marvelapp
 
 import org.junit.Test
 

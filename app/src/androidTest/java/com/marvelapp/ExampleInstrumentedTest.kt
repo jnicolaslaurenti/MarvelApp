@@ -1,4 +1,4 @@
-package com.onboarding.marvelapp
+package com.marvelapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.onboarding.marvelapp", appContext.packageName)
+        assertEquals("com.marvelapp", appContext.packageName)
     }
 }
