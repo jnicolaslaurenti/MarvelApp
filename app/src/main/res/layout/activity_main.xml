@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ED1D24"
-    tools:context=".MainActivity">
+    tools:context=".presentation.activity.MarvelActivity">
 
     <ImageView
         android:id="@+id/marvel_logo_splash_image_view"
