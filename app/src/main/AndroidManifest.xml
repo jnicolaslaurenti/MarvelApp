@@ -10,7 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".presentation.activity.MarvelActivity"
+        <activity
+            android:name=".presentation.activity.MarvelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

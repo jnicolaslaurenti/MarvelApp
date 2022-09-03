@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ED1D24"
-    tools:context=".presentation.activity.MarvelActivity">
+    android:background="@color/marvel_red"
+    tools:context=".presentation.activity.SplashActivity">
 
     <ImageView
         android:id="@+id/marvel_logo_splash_image_view"
@@ -15,6 +15,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
