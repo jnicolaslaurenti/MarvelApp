@@ -1,4 +1,4 @@
-package com.marvelapp.presentation.viewModel
+package com.marvelapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,18 +14,20 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor() : ViewModel() {
 
-    private val _state = MutableStateFlow(UiState(SplashStates.START_ANIMATION))
-    val state: StateFlow<UiState> = _state.asStateFlow()
+    private val _state = MutableStateFlow(SplashStates.START_ANIMATION)
+    val state: StateFlow<SplashStates> = _state.asStateFlow()
 
     fun runAnimation() = viewModelScope.launch {
-        delay(3000)
-        _state.update { UiState(animation = SplashStates.FINISH_ANIMATION) }
+        delay(SPLASH_DELAY)
+        _state.update { SplashStates.FINISH_ANIMATION }
     }
-
-    data class UiState(val animation: SplashStates)
 
     enum class SplashStates {
         START_ANIMATION,
         FINISH_ANIMATION,
+    }
+
+    companion object {
+        const val SPLASH_DELAY: Long = 3000
     }
 }
