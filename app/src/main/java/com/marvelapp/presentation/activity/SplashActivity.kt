@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.marvelapp.R
 import com.marvelapp.databinding.ActivitySplashBinding
-import com.marvelapp.presentation.viewModel.SplashViewModel
+import com.marvelapp.presentation.viewmodel.SplashViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -27,14 +27,14 @@ class SplashActivity : AppCompatActivity() {
         splashViewModel.runAnimation()
     }
 
-    private fun updateUI(state: SplashViewModel.UiState) {
-        when (state.animation) {
+    private fun updateUI(state: SplashViewModel.SplashStates) {
+        when (state) {
             SplashViewModel.SplashStates.START_ANIMATION -> {
                 val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.vertical_slide)
                 binding.marvelLogoSplashImageView.startAnimation(slideAnimation)
             }
             SplashViewModel.SplashStates.FINISH_ANIMATION -> {
-                startActivity(MarvelActivity.getIntent(this))
+                startActivity(MainMenuActivity.getIntent(this))
                 finish()
             }
         }
