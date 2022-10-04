@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
-            android:name=".presentation.activity.MainMenuActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -22,6 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.activity.MainMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.CharacterActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -41,7 +41,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     private fun goToCharacterScreen() {
-
+        startActivity(CharacterActivity.getIntent(this))
     }
 
     companion object {
