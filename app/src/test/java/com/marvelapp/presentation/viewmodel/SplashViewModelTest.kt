@@ -1,12 +1,18 @@
 package com.marvelapp.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.test.*
-import org.junit.*
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.setMain
+import org.junit.After
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
@@ -17,10 +23,10 @@ class SplashViewModelTest {
 
     private val splashViewModel = SplashViewModel()
 
-    private val testDispatcher = StandardTestDispatcher()
+    private val testDispatcher = TestCoroutineDispatcher()
 
     @get:Rule
-    val taskExecutorRule = InstantTaskExecutorRule()
+    var rule: TestRule = InstantTaskExecutorRule()
 
     @Before
     fun init() {
@@ -30,15 +36,16 @@ class SplashViewModelTest {
     @After
     fun after() {
         Dispatchers.resetMain()
+        testDispatcher.cleanupTestCoroutines()
     }
 
     @Test
     fun `start animation`() = runTest {
-            splashViewModel.runAnimation().join()
-            Assert.assertEquals(
-                SplashViewModel.SplashStates.FINISH_ANIMATION,
-                splashViewModel.state.value
-            )
+        splashViewModel.runAnimation().join()
+        Assert.assertEquals(
+            SplashViewModel.SplashStates.FINISH_ANIMATION,
+            splashViewModel.state.value
+        )
     }
 
 }
