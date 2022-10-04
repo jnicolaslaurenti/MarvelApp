@@ -16,8 +16,7 @@ class MainMenuViewModel @Inject constructor() : ViewModel() {
     private val _state = MutableStateFlow(MainMenuStates.WAITING)
     val state: StateFlow<MainMenuStates> = _state.asStateFlow()
 
-    fun goToCharacterScreen() =
-        viewModelScope.launch {
+    fun goToCharacterScreen() {
             _state.update { MainMenuStates.BUTTON_PRESSED }
         }
 
