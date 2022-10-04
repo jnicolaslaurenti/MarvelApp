@@ -8,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.marvelapp.databinding.ActivityMainMenuBinding
 import com.marvelapp.presentation.viewmodel.MainMenuViewModel
-import com.marvelapp.presentation.viewmodel.MainMenuViewModel.MainMenuStates.BUTTON_PRESSED
-import com.marvelapp.presentation.viewmodel.MainMenuViewModel.MainMenuStates.WAITING
+import com.marvelapp.presentation.viewmodel.MainMenuViewModel.MainMenuStates.INIT
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainMenuActivity : AppCompatActivity() {
@@ -27,18 +25,13 @@ class MainMenuActivity : AppCompatActivity() {
         lifecycleScope.launchWhenStarted {
             viewModel.state.collectLatest { this@MainMenuActivity.updateUI(it) }
         }
-        binding.nextScreenButton.setOnClickListener {
-            viewModel.goToCharacterScreen()
-        }
     }
 
     private fun updateUI(state: MainMenuViewModel.MainMenuStates) {
         when (state) {
-            WAITING -> {
+            INIT -> {
                 // DO NOTHING
             }
-            BUTTON_PRESSED ->
-                TODO("goToCharacterScreen()")
         }
     }
 

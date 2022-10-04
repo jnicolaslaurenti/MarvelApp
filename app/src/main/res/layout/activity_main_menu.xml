@@ -13,17 +13,6 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/main_title_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/next_screen_button"/>
-
-    <Button
-        android:id="@+id/next_screen_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_text_button"
-        app:layout_constraintStart_toStartOf="@id/title_text_view"
-        app:layout_constraintEnd_toEndOf="@id/title_text_view"
-        app:layout_constraintTop_toBottomOf="@id/title_text_view"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
