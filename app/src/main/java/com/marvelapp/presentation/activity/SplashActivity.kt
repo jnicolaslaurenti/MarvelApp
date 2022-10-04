@@ -1,5 +1,6 @@
 package com.marvelapp.presentation.activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
@@ -11,6 +12,7 @@ import com.marvelapp.presentation.viewmodel.SplashViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
+@SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
