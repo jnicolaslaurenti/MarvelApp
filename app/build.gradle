@@ -43,8 +43,6 @@ android {
     }
 }
 
-// preBuild.dependsOn ktlintFormat
-
 dependencies {
 
     // MVVM

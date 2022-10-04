@@ -10,9 +10,11 @@ import com.marvelapp.databinding.ActivityMainMenuBinding
 import com.marvelapp.presentation.viewmodel.MainMenuViewModel
 import com.marvelapp.presentation.viewmodel.MainMenuViewModel.MainMenuStates.BUTTON_PRESSED
 import com.marvelapp.presentation.viewmodel.MainMenuViewModel.MainMenuStates.WAITING
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainMenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainMenuBinding
@@ -36,12 +38,8 @@ class MainMenuActivity : AppCompatActivity() {
                 // DO NOTHING
             }
             BUTTON_PRESSED ->
-                goToCharacterScreen()
+                TODO("goToCharacterScreen()")
         }
-    }
-
-    private fun goToCharacterScreen() {
-        startActivity(CharacterActivity.getIntent(this))
     }
 
     companion object {

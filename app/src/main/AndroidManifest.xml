@@ -22,9 +22,6 @@
         <activity
             android:name=".presentation.activity.MainMenuActivity"
             android:exported="false" />
-        <activity
-            android:name=".presentation.activity.CharacterActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
