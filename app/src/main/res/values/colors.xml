@@ -8,4 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="marvel_red">#ED1D24</color>
+    <color name="coral">#FF533D</color>
+    <color name="leather">#F5F5F5</color>
+    <color name="navy_blue">#0F1626</color>
+
 </resources>

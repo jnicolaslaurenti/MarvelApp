@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.marvelapp.R
 import com.marvelapp.databinding.ActivityMainMenuBinding
 import com.marvelapp.presentation.viewmodel.MainMenuViewModel
 import com.marvelapp.presentation.viewmodel.MainMenuViewModel.MainMenuStates.INIT
@@ -22,6 +24,10 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Glide.with(this)
+            .load(R.drawable.spidey)
+            .override(400)
+            .into(binding.spideyGif)
         lifecycleScope.launchWhenStarted {
             viewModel.state.collectLatest { this@MainMenuActivity.updateUI(it) }
         }

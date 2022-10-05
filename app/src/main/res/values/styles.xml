@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="generic_style">
+        <item name="android:fontFamily">@font/black_ops_one</item>
+    </style>
+</resources>
