@@ -4,15 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".presentation.activity.MainMenuActivity">
 
     <TextView
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/main_title_text"
+        style="@style/generic_style"
+        android:layout_marginTop="@dimen/margin_title"
+        android:text="@string/main_title_text"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/main_title_text" />
+
+    <TextView
+        android:id="@+id/description_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/generic_style"
+        android:text="@string/description_text"
+        android:textColor="@color/black"
+        android:layout_marginBottom="@dimen/margin_description"
+        app:layout_constraintStart_toStartOf="@id/title_text_view"
+        app:layout_constraintEnd_toEndOf="@id/title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/title_text_view"
+        app:layout_constraintBottom_toTopOf="@id/spidey_gif"/>
+
+    <ImageView
+        android:id="@+id/spidey_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/spidey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/main_menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/generic_style"
+        android:text="@string/next_text_button"
+        android:layout_marginBottom="@dimen/margin_button"
+        app:layout_constraintStart_toStartOf="@id/description_text_view"
+        app:layout_constraintEnd_toEndOf="@id/description_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
