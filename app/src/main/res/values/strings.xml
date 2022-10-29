@@ -4,4 +4,7 @@
     <string name="characters_title_text">Characters</string>
     <string name="main_title_text">The amazing MarvelApp</string>
     <string name="description_text">With this app you can know all \n the characters of the MCU!</string>
+    <string name="title_activity_character">CharacterActivity</string>
+    <string name="character_name_text">Character name</string>
+    <string name="character_screen_title">Select a character!</string>
 </resources>

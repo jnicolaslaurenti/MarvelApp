@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".presentation.activity.CharacterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_character" />
+        <activity
             android:name=".presentation.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -27,5 +31,4 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
